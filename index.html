@@ -198,6 +198,35 @@
     opacity:0; pointer-events:none; transition:opacity .35s ease;
   }
   .mobile-drawer.open{ opacity:1; pointer-events:auto; }
+  .mobile-close{
+  position:absolute;
+  top:24px;
+  right:var(--edge);
+  width:44px;
+  height:44px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:transparent;
+  border:1px solid var(--line-strong);
+  color:var(--ink);
+  font-size:30px;
+  line-height:1;
+  cursor:pointer;
+  border-radius:2px;
+  transition:all .25s ease;
+  z-index:5;
+}
+
+.mobile-close:hover{
+  color:var(--accent);
+  border-color:var(--accent);
+}
+
+html[dir="rtl"] .mobile-close{
+  right:auto;
+  left:var(--edge);
+}
   .mobile-drawer-links{ display:flex; flex-direction:column; gap:28px; text-align:center; }
   .mobile-drawer-links a{
     font-family:var(--display); font-style:italic; font-size:26px; color:var(--ink);
@@ -500,6 +529,11 @@
 </header>
 
 <div class="mobile-drawer" id="mobileDrawer">
+
+  <button class="mobile-close" id="mobileClose" aria-label="Close menu" type="button">
+    ×
+  </button>
+
   <nav class="mobile-drawer-links">
     <a href="#about" data-i18n="navAbout">About</a>
     <a href="#film" data-i18n="navFilm">Film &amp; TV</a>
