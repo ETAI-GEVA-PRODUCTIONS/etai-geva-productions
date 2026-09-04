@@ -1,0 +1,7 @@
+# Etai Geva Productions
+# Replace the domain below with your real domain once purchased.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.etaigevaproductions.com/sitemap.xml
