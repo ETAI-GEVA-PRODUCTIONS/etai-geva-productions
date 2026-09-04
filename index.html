@@ -776,7 +776,8 @@ html[dir="rtl"] .mobile-close{
 <script>
   // ---- mobile menu drawer ----
   const menuBtn = document.getElementById('menuBtn');
-  const mobileDrawer = document.getElementById('mobileDrawer');
+const mobileDrawer = document.getElementById('mobileDrawer');
+const mobileClose = document.getElementById('mobileClose');
   function closeDrawer(){
     mobileDrawer.classList.remove('open');
     menuBtn.setAttribute('aria-expanded', 'false');
@@ -789,6 +790,7 @@ html[dir="rtl"] .mobile-close{
   }
   menuBtn.addEventListener('click', () => {
     mobileDrawer.classList.contains('open') ? closeDrawer() : openDrawer();
+    mobileClose.addEventListener('click', closeDrawer);
   });
   mobileDrawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
